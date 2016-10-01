@@ -116,9 +116,12 @@
     <None Include="MarvelDemo_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\NavIcons\captainamerica_100.png" />
     <Content Include="Assets\NavIcons\captainamerica_52.png" />
     <Content Include="Assets\NavIcons\info_50.png" />
+    <Content Include="Assets\NavIcons\ironman_100.png" />
     <Content Include="Assets\NavIcons\ironman_52.png" />
+    <Content Include="Assets\NavIcons\thor_100.png" />
     <Content Include="Assets\NavIcons\thor_52.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
