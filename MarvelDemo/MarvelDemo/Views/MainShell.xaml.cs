@@ -7,12 +7,17 @@ namespace MarvelDemo.Views
 {
     public sealed partial class MainShell
     {
+        Frame RootFrame => Window.Current.Content as Frame;
+
         public MainShell()
         {
             InitializeComponent();
 
             DataContext = new MainShellViewModel();
-            PaneGrid.Width = MainSplitView.IsPaneOpen ? MainSplitView.OpenPaneLength : MainSplitView.CompactPaneLength;
+
+            //HOLOLENS - The HoloLens shell does not have MainSplitView so we need to check for null.
+            if (MainSplitView != null)
+                PaneGrid.Width = MainSplitView.IsPaneOpen ? MainSplitView.OpenPaneLength : MainSplitView.CompactPaneLength;
         }
 
         private void HamburgerButton_Click(object sender, RoutedEventArgs e)
@@ -24,12 +29,25 @@ namespace MarvelDemo.Views
         private void NavItemsList_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectedItem = NavItemsList.SelectedItem as Character;
-            ContentFrame.Navigate(typeof(MainView), selectedItem);
+
+            //HOLOLENS - The HoloLens shell does not have ContentFrame so we need to check for null.
+            if (ContentFrame != null)
+                ContentFrame.Navigate(typeof(MainView), selectedItem);
+            else
+            {
+                RootFrame.Navigate(typeof(MainView), selectedItem);
+            }
         }
 
         private void InfoButton_OnClickButton_Click(object sender, RoutedEventArgs e)
         {
-            ContentFrame.Navigate(typeof(AboutView));
+            //HOLOLENS - The HoloLens shell does not have ContentFrame so we need to check for null.
+            if (ContentFrame != null)
+                ContentFrame.Navigate(typeof(AboutView));
+            else
+            {
+                RootFrame.Navigate(typeof(AboutView));
+            }
         }
     }
 }
