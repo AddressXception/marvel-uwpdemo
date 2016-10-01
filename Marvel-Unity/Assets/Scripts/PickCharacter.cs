@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickCharacter : MonoBehaviour
 {
 
-    private GameObject SuperHero;
+    private GameObject _superHero;
 
     public GameObject IronManPrefab;
 
@@ -13,13 +13,12 @@ public class PickCharacter : MonoBehaviour
 
     public GameObject ThorPrefab;
 
-    public Camera MainCamera { get { return GetComponent<Camera>(); } }
-
 	// Use this for initialization
 	void Start ()
 	{
-	    SuperHero = IronManPrefab;
-	    Instantiate(SuperHero);
+	    _superHero = IronManPrefab;
+
+	    Instantiate(_superHero);
 	}
 	
 	// Update is called once per frame
