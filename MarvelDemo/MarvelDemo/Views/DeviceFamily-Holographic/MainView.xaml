@@ -9,6 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <GridView Style="{StaticResource HorizontalGridView}"
+                  SelectionChanged="ComicsList_OnItemCSelected"
                   ItemsSource="{Binding Comics}"
                   Margin="10,0,-48,0"
                   Padding="10,0,48,0">

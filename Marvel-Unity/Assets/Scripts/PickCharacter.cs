@@ -13,16 +13,52 @@ public class PickCharacter : MonoBehaviour
 
     public GameObject ThorPrefab;
 
+    public enum CharacterModel
+    {
+        Captainamerica,
+        IronMan,
+        Thor
+    }
+
+    public static CharacterModel SelectedCharacter = CharacterModel.IronMan;
+
+    private static bool _shouldUpdateScene = false;
+
+    public static void SetSelectedCharacter(CharacterModel character)
+    {
+        SelectedCharacter = character;
+        _shouldUpdateScene = true;
+    }
+
 	// Use this for initialization
 	void Start ()
 	{
-	    _superHero = IronManPrefab;
-
-	    Instantiate(_superHero);
+        _shouldUpdateScene = true;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+    void Update()
+    {
+        if (!_shouldUpdateScene) return;
+
+        _shouldUpdateScene = false;
+
+        if (_superHero != null)
+            Destroy(_superHero);
+
+        switch (SelectedCharacter)
+        {
+            case CharacterModel.Captainamerica:
+                _superHero = CaptainPrefab;
+                break;
+            case CharacterModel.IronMan:
+                _superHero = IronManPrefab;
+                break;
+            case CharacterModel.Thor:
+                _superHero = ThorPrefab;
+                break;
+        }
+
+        Instantiate(_superHero);
+    }
 }
