@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" IgnorableNamespaces="uap uap2 mp">
+<Package xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" 
+         xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" 
+         xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2" 
+         xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" 
+         IgnorableNamespaces="uap uap2 mp">
   <Identity Name="Marvel-Unity" Publisher="CN=DefaultCompany" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="17e23499-dda6-4aac-a103-27e7c9db9c51" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
@@ -30,5 +34,10 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <Capability Name="internetClientServer" />
+    <Capability Name="privateNetworkClientServer" />
+    <uap2:Capability Name="spatialPerception"/>
+    <DeviceCapability Name="microphone" />
   </Capabilities>
+
 </Package>

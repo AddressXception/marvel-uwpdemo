@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using HoloToolkit.Unity;
 using UnityEngine;
 
 public class Interactible : MonoBehaviour {
@@ -57,7 +58,5 @@ public class Interactible : MonoBehaviour {
         {
             audioSource.Play();
         }
-
-        this.SendMessage("PerformTagAlong");
     }
 }
