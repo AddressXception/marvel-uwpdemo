@@ -11,8 +11,8 @@ namespace MarvelDemo.Core.Services
     public class MarvelDataService : IMarvelDataService
     {
         // TODO: Add your Marvel Developer Account keys
-        const string _API_PRIVATE_KEY = "";
-        const string _API_PUBLIC_KEY = "";
+        const string _API_PRIVATE_KEY = "16b3d100a5a7842a938aa1f4e4c08d75dc3d1e2d";
+        const string _API_PUBLIC_KEY = "f01237e29a0de9ebe010ea15ae70a9f7";
 
         readonly IHashService _hashService;
 

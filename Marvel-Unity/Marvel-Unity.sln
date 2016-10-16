@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel-Unity.CSharp", "Marvel-Unity.CSharp.csproj", "{D5AB8F86-C154-0103-A25E-A45CAF6EFBFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marvel-Unity.CSharp.Editor", "Marvel-Unity.CSharp.Editor.csproj", "{7661837D-C99C-C819-2F5F-37C3CB04ED33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{D5AB8F86-C154-0103-A25E-A45CAF6EFBFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5AB8F86-C154-0103-A25E-A45CAF6EFBFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5AB8F86-C154-0103-A25E-A45CAF6EFBFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7661837D-C99C-C819-2F5F-37C3CB04ED33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7661837D-C99C-C819-2F5F-37C3CB04ED33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7661837D-C99C-C819-2F5F-37C3CB04ED33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7661837D-C99C-C819-2F5F-37C3CB04ED33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

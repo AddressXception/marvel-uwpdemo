@@ -6,5 +6,6 @@
         <UnityWSAPlayerDir>C:\Program Files\Unity 5.5.0b4\Editor\Data\PlaybackEngines\MetroSupport\</UnityWSAPlayerDir>
         <UnityWSAToolsDir>$(UnityWSASolutionDir)Unity\Tools\</UnityWSAToolsDir>
         <UnityProjectDir>C:\Users\mattw\Documents\InfernoRed\HoloLens\marvel-uwpdemo\Marvel-Unity\</UnityProjectDir>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 </Project>
