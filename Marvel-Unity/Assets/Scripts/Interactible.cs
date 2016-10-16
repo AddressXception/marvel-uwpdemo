@@ -8,21 +8,10 @@ public class Interactible : MonoBehaviour {
     public AudioClip TargetFeedbackSound;
     private AudioSource audioSource;
 
-    private Material[] defaultMaterials;
-
     void Start()
     {
-        try
-        {
-            defaultMaterials = GetComponent<Renderer>().materials;
-        }
-        catch 
-        {
-            print("error getting renderer component");
-        }
-
         // Add a BoxCollider if the interactible does not contain one.
-        Collider collider = GetComponentInChildren<Collider>();
+        var collider = GetComponentInChildren<Collider>();
         if (collider == null)
         {
             gameObject.AddComponent<BoxCollider>();
@@ -49,44 +38,26 @@ public class Interactible : MonoBehaviour {
         }
     }
 
-    /* TODO: DEVELOPER CODING EXERCISE 2.d */
-
     void OnGazeEnter()
     {
         print("GazeEntered");
-        for (int i = 0; i < defaultMaterials.Length; i++)
-        {
-            // 2.d: Uncomment the below line to highlight the material when gaze enters.
-            defaultMaterials[i].SetFloat("_Highlight", .25f);
-        }
     }
 
     void OnGazeLeave()
     {
         print("GazeExited");
-        for (int i = 0; i < defaultMaterials.Length; i++)
-        {
-            // 2.d: Uncomment the below line to remove highlight on material when gaze exits.
-            defaultMaterials[i].SetFloat("_Highlight", 0f);
-        }
     }
 
     void OnSelect()
     {
-        print("OnSelect");
-        for (int i = 0; i < defaultMaterials.Length; i++)
-        {
-            defaultMaterials[i].SetFloat("_Highlight", .5f);
-        }
+        print("Interactible OnSelect");
 
-        // Play the audioSource feedback when we gaze and select a hologram.
+        // Play the audioSource feedback (if any) when we gaze and select a hologram.
         if (audioSource != null && !audioSource.isPlaying)
         {
             audioSource.Play();
         }
 
-        /* TODO: DEVELOPER CODING EXERCISE 6.a */
-        // 6.a: Handle the OnSelect by sending a PerformTagAlong message.
         this.SendMessage("PerformTagAlong");
     }
 }
